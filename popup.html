@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AJD CSV Uploader</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 320px;
+      padding: 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .icon {
+      font-size: 48px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .version {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .content {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+    }
+
+    .info-item {
+      margin-bottom: 12px;
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .info-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+
+    .status {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 12px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .status.active {
+      background: rgba(34, 197, 94, 0.2);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .status.inactive {
+      background: rgba(239, 68, 68, 0.2);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+    }
+
+    .status-icon {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: white;
+      color: #667eea;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 12px;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:active {
+      transform: translateY(0);
+    }
+
+    .footer {
+      text-align: center;
+      font-size: 11px;
+      opacity: 0.7;
+      margin-top: 16px;
+    }
+
+    .author-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
+
+    .author-link:hover {
+      opacity: 1;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="icon">📊</div>
+    <h1>AJD CSV Uploader</h1>
+    <div class="version">v1.0.6</div>
+  </div>
+
+  <div class="content">
+    <div class="info-item">
+      <strong>📌 사용 방법</strong>
+      Works 법인카드 지출결의에서<br>
+      "📊 CSV 업로드" 버튼을 클릭하세요.
+    </div>
+    <div class="info-item">
+      <strong>📋 지원 형식</strong>
+      .csv, .txt (탭/쉼표 구분)
+    </div>
+    <div class="info-item">
+      <strong>✨ 기능</strong>
+      • 자동 데이터 검증<br>
+      • 미리보기<br>
+      • 진행 상황 표시<br>
+      • 에러 리포트
+    </div>
+  </div>
+
+  <div id="status" class="status inactive">
+    <div class="status-icon">⏸️</div>
+    <div>경비 페이지에서<br>활성화됩니다</div>
+  </div>
+
+  <div class="footer">
+    Made with ❤️ by <a href="mailto:haseok@haseok.com" class="author-link">Hannes</a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "AJD CSV Uploader",
+  "version": "1.0.6",
+  "description": "Naver Works 법인카드 지출결의에 CSV 파일을 자동으로 입력합니다",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.worksmobile.com/*",
+    "*://*.naver.com/*",
+    "*://*.ncpworkplace.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.worksmobile.com/*",
+        "*://*.naver.com/*",
+        "*://*.ncpworkplace.com/*"
+      ],
+      "js": ["parser.js", "content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  }
+}
